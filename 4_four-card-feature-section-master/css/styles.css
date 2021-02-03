@@ -1,0 +1,147 @@
+/* ESTILOS NORMALES
+(para móviles en vertical) 375 px*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    background-color:hsl(0, 0%, 98%);
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 90px 0;
+}
+
+.header{
+    margin: 0 32px 50px 32px;
+    text-align: center;
+    /* font-size: .9em; */
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.header__title{
+    font-weight: bolder;
+    font-size: 1.4em;
+}
+
+.header__subtitle{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.main{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    grid-template-areas: 
+    "box1"
+    "box2"
+    "box3"
+    "box4";
+}
+
+.main__box{
+    margin: 0 32px;
+    height: 222px;
+    padding: 27px;
+    position: relative;
+    font-weight: 100;
+    font-size: 1em;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.box__paragraph{
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.box__img{
+    position: absolute;
+    bottom: 27px;
+    right: 27px;
+}
+
+.main__box:first-child{
+    grid-area: box1;
+    /* box-shadow: 0 -2px 0 0 red; */
+    box-shadow: 0px -5px hsl(180, 62%, 55%), 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main__box:nth-child(2){
+    grid-area: box2;
+    box-shadow: 0px -5px hsl(0, 78%, 62%), 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main__box:nth-child(3){
+    grid-area: box3;
+    box-shadow: 0px -5px hsl(34, 97%, 64%), 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main__box:nth-child(4){
+    grid-area: box4;
+    box-shadow: 0px -5px hsl(212, 86%, 64%), 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*700px*/
+@media screen and (min-width: 43.75em){
+    .container{
+        align-items: center;
+    }
+    .header{
+        width: 504px;
+    }
+    .main{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "box1 box2"
+        "box3 box4";
+    }
+    .main__box{
+        margin: 0;
+        width: 352px;
+        height: 250px;
+    }
+}
+
+/*1000px 68.75*/
+@media screen and (min-width: 68.75em){
+    body{
+        display: grid;
+        place-content: center;
+    }
+    .container{
+        margin: 0;
+        width: 1110px;
+        max-height: 753px;
+    }
+    .main{
+        margin: 0;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "box1 box2 box4"
+        "box1 box3 box4";
+    }
+
+}
